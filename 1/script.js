@@ -12,3 +12,4 @@ const bubbleSort = (arr) => {
 };
 
 console.log(bubbleSort([ 1, -3, 4, 7, 22, 11, 45, -5, 0 ]));
+console.log(bubbleSort([ 9, 1, 3, 0, 29 ]));

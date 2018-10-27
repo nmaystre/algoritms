@@ -16,3 +16,4 @@ const selectionSort = (arr) => {
 };
 
 console.log(selectionSort([ 9, 1, 3, 0, 29 ]));
+console.log(selectionSort([ 1, -3, 4, 7, 22, 11, 45, -5, 0 ]));
