@@ -28,33 +28,22 @@ class LinkedList {
 		}
 		return listPresentation.toString();
 	}
-}
-
-class LinkedListReverse {
-	constructor(arr) {
-		arr.reduce((node, value) => {
-			const currentNode = new ListNode(value);
-			if (!node) {
-				this.head = currentNode;
-			} else {
-				node.setNext(currentNode);
-			}
-			return currentNode;
-		}, null);
-	}
-	toString() {
-		const listReversePresentation = [];
-
-		for (let currentNode = this.head; currentNode; currentNode = currentNode.next) {
-			listReversePresentation.unshift(currentNode.value);
+	reverse() {
+		let nextNode = null;
+		let prevNode = null;
+		for (let currentNode = this.head; currentNode; ) {
+			nextNode = currentNode.next;
+			currentNode.setNext(prevNode);
+			prevNode = currentNode;
+			currentNode = nextNode;
 		}
-		return listReversePresentation.toString();
+		this.head = prevNode;
 	}
 }
 
-const arr = [ 'one', 'two', 'three', 'four' ];
-const linkListReverse = new LinkedListReverse(arr);
-linkListReverse.toString();
-console.log(linkListReverse.toString());
+const arr = [ 5, 10, 15, 25 ];
+let list = new LinkedList(arr);
 
-// console.log(test, testR);
+console.log(list.toString());
+list.reverse();
+console.log(list.toString());
