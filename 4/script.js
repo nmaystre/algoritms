@@ -46,4 +46,5 @@ let list = new LinkedList(arr);
 
 console.log(list.toString());
 list.reverse();
+console.log(list);
 console.log(list.toString());
